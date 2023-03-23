@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: build-suite-test-secret-overriding
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: build-suite-test-secret-overriding
+    app.kubernetes.io/part-of: test-app-xtlf
+  name: build-suite-test-secret-oj5cv
+  namespace: build-e2e-tamj-tenant
+spec:
+  port:
+    targetPort: 8081
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: build-suite-test-secret-overriding
+    weight: 100
+status: {}
